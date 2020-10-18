@@ -7,13 +7,10 @@ import com.example.madlevel5task1.model.Note
 @Dao
 interface NoteDao {
     @Query("SELECT * FROM noteTable")
-    fun getAllNotes(): LiveData<List<Note>>
+    fun getNotePad(): LiveData<Note?>
 
     @Insert
     suspend fun insertNote(note: Note)
-
-    @Delete
-    suspend fun deleteNote(note: Note)
 
     @Update
     suspend fun updateNote(note: Note)

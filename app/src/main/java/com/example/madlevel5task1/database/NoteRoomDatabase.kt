@@ -4,10 +4,13 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import com.example.madlevel5task1.dao.NoteDao
+import com.example.madlevel5task1.model.Converters
 import com.example.madlevel5task1.model.Note
 
 @Database(entities = [Note::class], version = 1, exportSchema = false)
+@TypeConverters(Converters::class)
 abstract class NoteRoomDatabase : RoomDatabase() {
     abstract fun noteDao(): NoteDao
 
@@ -26,6 +29,7 @@ abstract class NoteRoomDatabase : RoomDatabase() {
                             NoteRoomDatabase::class.java,
                             DATABASE_NAME
                         )
+                            .fallbackToDestructiveMigration()
                             .build()
                     }
                 }
