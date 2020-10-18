@@ -11,4 +11,5 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="notepad_title">My Notepad</string>
     <string name="save_text">Save</string>
+    <string name="date">Last updated: %1$s</string>
 </resources>
